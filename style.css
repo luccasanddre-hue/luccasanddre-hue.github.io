@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box; /*Essa função calcula o conteúdo da caixa até a borda*/
+    font-family:'Oxygen',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-background: #030207;
+    --color-white: #fff;
+    --color-blue: #1474b4;
+}
+
+body{
+    background-color: var(--color-background);
+    color: var(--color-white);
+}
+
+a{
+    color: var(--color-blue);
+}
+
+.hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--color-background));
+    position: relative; /*position é a propriedade do CSS que define como um elemento será posicionado na página. Ela controla se o elemento segue o fluxo normal do layout ou se pode ser movido manualmente.*/
+    min-height: 100vh;
+}
+
+.hero__background{
+    object-fit: cover; /*Esse comando faz o conteúdo preencher todo o espaço disponível, mesmo que para isso precise cortar uma parte da imagem.*/
+    position: absolute;
+    top: 0;
+    height: 100vh; /*Esse "vh" é usado quando você quer que um elemento se ajuste ao tamanho da tela, independentemente do conteúdo.*/
+    width: 100%; 
+    z-index: -10;
+}
+
+.hero__foreground {
+  color: var(--color-white);  
+  padding-top: 40vh;
+  text-align: center;
+}
+
+.hero__title {
+    font-size: 5rem;
+    font-weight: 300;
+}
+
+.hero__text{
+    margin-top: 2rem;
+    letter-spacing: 0.5rem; /*Essa função é pra aumentar o espaçamentos das letras*/
+    text-transform: uppercase; /*Isso deixa o texto todo maiúsculo*/
+}
+
+.section{
+    text-align: center;
+    padding: 0 8rem;
+    overflow:hidden; /*Essa funcionalidade serve para controlar o transbordamento dos elementos*/
+}
+
+.section__title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 4rem auto;
+}
+
+.section__img,
+.section__img-inline{
+    box-shadow: 0 1rem 2rem -0.5rem rgba(20, 116, 180, 0.25); 
+        /*eixo x, eixo y, blur, expansão/recuo, cor*/
+    height: 20rem;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0.75rem;
+    object-position: top;
+    position: relative;
+    max-height: 30rem;
+}
+
+.section__text,
+.sedtion__text-inline {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    margin: 4rem auto;
+}
+
+.section__img-inline {
+    border-top-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    float: left; /*Essa propriedade faz o conteúdo flutuar na página*/
+    margin-right: 4rem;
+    margin-bottom: 2rem;
+    height: 25rem;
+    width: 20rem;
+}
+
+.section__text-inline{
+    margin-top: 6rem;
+    text-align: left;
+}
+
+.section__text-inline > p {
+  margin-top: 1.5rem;  
+}
+
+#hangouts img {
+    object-position: center;
+}
+
+.gallery__img {
+    border-radius: .75rem;
+    height: 16rem;
+    width: 16rem;
+    object-fit: cover;
+    transform:rotate(-2deg) ; /*Essa funcionalidade permite que aplique efeitos nos elementos*/
+}
+
+.gallery__img-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.gallery__img-wrapper + .gallery__img-wrapper{
+    margin-left: 3rem;
+    margin-top: 3rem;
+}
+
+.gallery__img-wrapper:nth-child(even) > .gallery__img {
+    top: 1rem;
+    transform: rotate(2deg);
+}
+
+.gallery__img-wrapper::after {
+    content: "";
+    background-color: rgb(23, 2, 157);
+    border-radius: 999px;
+    position: absolute;
+    top: 0.25rem;
+    display: block;
+    height: 1.25rem;
+    width: 1.25rem;
+    right: 1rem;
+}
+
+.gallery__img-wrapper:nth-child(even)::after {
+    left: 1rem;
+}
+
+.footer{
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
